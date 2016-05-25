@@ -2,7 +2,7 @@
 layout: chapters
 id: chapters
 permalink: /chapters/
-title: "Chapters"
+title: "Содержание"
 ---
 
 {% assign prefaceChapters = site.chapters | where:'section', 'Preface' %}
@@ -10,9 +10,9 @@ title: "Chapters"
 {% assign coreChapters = site.chapters | where:'section', 'Core' %}
 {% assign extraChapters = site.chapters | where:'section', 'Extras' %}
 
-# Chapters
+# Содержание
 
-## Preface
+## Предисловие
 
 <ol>
   {% for chapter in prefaceChapters %}
@@ -20,7 +20,7 @@ title: "Chapters"
   {% endfor %}
 </ol>
 
-## Background
+## Основа
 
 {% assign backgroundStart = prefaceChapters.size | plus: 1 %}
 
@@ -30,7 +30,7 @@ title: "Chapters"
   {% endfor %}
 </ol>
 
-## Core
+## Суть
 
 {% assign coreStart = backgroundStart | plus: backgroundChapters.size %}
 
@@ -40,7 +40,7 @@ title: "Chapters"
 	{% endfor %}
 </ol>
 
-## Extras
+## Дополнительно
 
 {% assign extrasStart = coreStart | plus: coreChapters.size %}
 
