@@ -6,7 +6,7 @@ permalink: /chapters/faqs/
 description: Your questions about MaintainableCSS are answered here.
 ---
 
-Can't find your answer here? Raise an issue on [Github](https://github.com/adamsilver/maintainablecss.com/issues/new) and I will get back to you as soon as I can. Thanks!
+Can't find your answer here? Raise an issue on [Github](https://github.com/termosa/maintainablecss.ru/issues/new) and I will get back to you as soon as I can. Thanks!
 
 ## When should I use this?
 

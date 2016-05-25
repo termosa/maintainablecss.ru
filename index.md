@@ -115,6 +115,6 @@ id: home
 <!-- <div class="gotQuestion">
 	<div class="gotQuestion-inner">
 		<h2>Got a question, issue or suggestion?</h2>
-		<p>Just <a href="http://github.com/adamsilver/maintainablecss.com/issues/new/">raise an issue for discussion</a> on Github.</p>
+		<p>Just <a href="http://github.com/termosa/maintainablecss.ru/issues/new/">raise an issue for discussion</a> on Github.</p>
 	</div>
 </div> -->
