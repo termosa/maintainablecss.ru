@@ -8,8 +8,8 @@ id: home
 	<img class="hero-logo" src="/assets/img/logo.png" width="250" height="250">
 
 	<h1>MaintainableCSS</h1>
-	<p>Write CSS without worrying that overzealous, pre-existing styles will cause problems. <em>MaintainableCSS</em> is an approach to writing <em>modular</em>, <em>scalable</em> and of course, <em>maintainable</em> CSS.</p>
-	<a class="hero-button" href="/chapters/introduction/">Read now</a>
+  <p>Пишите CSS без страха, что существующие стили доставят вам проблемы. <em>MaintainableCSS</em> &mdash; это подход к написанию <em>модульного</em>, <em>расширяемого</em> и конечно же, <em>поддерживаемого</em> CSS кода.</p>
+	<a class="hero-button" href="/chapters/introduction/">Начать</a>
 </div>
 <!--
 	<h2>Maintainable &mdash; Adjective</h2>
@@ -17,93 +17,93 @@ id: home
 -->
 
 <div class="benefits">
-	<h2>Benefits of MaintainableCSS</h2>
+	<h2>Преимущества MaintainableCSS</h2>
 	<div class="benefits-wrapper">
 		<div class="benefit">
-			<h3>Modular and encapsulated</h3>
-			<p>Styles don't bleed or cascade without your permission.</p>
+			<h3>Модульный и изолированный</h3>
+			<p>Стили не "просачиваются" и не "проваливаются" без вашего разрешения.</p>
 		</div>
 		<div class="benefit">
-			<h3>Any design requirements</h3>
-			<p>Completely flexible to your needs.</p>
+			<h3>Любые требования дизайна</h3>
+			<p>Достаточно гибкий для любых ваших потребностей.</p>
 		</div>
 		<div class="benefit">
-			<h3>No tooling required</h3>
-			<p>But you can use tooling if you want to.</p>
+			<h3>Не требует никаких установок</h3>
+			<p>Но при желании вы сможете установить нужные вам инструменты.</p>
 		</div>
 		<div class="benefit">
-			<h3>Easy to learn</h3>
-			<p>Read the guides and see.</p>
+			<h3>Прост в изучении</h3>
+			<p>Прочитайте руководство и увидите.</p>
 		</div>
 		<div class="benefit">
-			<h3>Any size project</h3>
-			<p>Whatever size project you have, <em>MaintainableCSS</em> will help.</p>
+			<h3>Любой размер проекта</h3>
+			<p>Не зависимо от того какого размера ваш проект &mdash; <em>MaintainableCSS</em> поможет вам.</p>
 		</div>
 		<div class="benefit">
-			<h3>Upgrade in your own time</h3>
-			<p>You can start applying the approach today, bit by bit. You don't need to upgrade the whole project in one go.</p>
+			<h3>Легко применяется</h3>
+			<p>Вы можете начать использовать этот подход уже сегодня &mdash; вам не нужно обновлять весь проект сразу.</p>
 		</div>
-		<div class="benefit">
+		<div class="benefit"><!-- TODO: Translate -->
 			<h3>No problems of specificity</h3>
 			<p>Avoid problems of specificity and override hell. Write CSS as if you always have a blank canvas.</p>
 		</div>
 		<div class="benefit">
-			<h3>Managing state is easy</h3>
-			<p>Change the look and feel based on states such as <em>loading</em>, <em>disabled</em> and <em>hiding</em>.</p>
+			<h3>Простое изменение состояния</h3>
+			<p>Изменяй вид основываясь на таких состояниях как <em>loading</em>, <em>disabled</em> и <em>hiding</em>.</p>
 		</div>
 		<div class="benefit">
-			<h3>No worry of regression</h3>
-			<p>When you change existing styles, have no fear that you might have caused regression elsewhere.</p>
+			<h3>Не нужно беспокоится о регрессии</h3>
+			<p>Когда вы изменяете существующие стили, вам не нужно боятся, что вы спровоцируете регрессию где-либо еще.</p>
 		</div>
 		<div class="benefit">
-			<h3>Any team size</h3>
-			<p>Useful in a team of one or in a team of 100.</p>
+			<h3>Команды любого размера</h3>
+			<p>Полезен как в команде из одного так и из ста человек.</p>
 		</div>
 		<div class="benefit">
-			<h3>Semantic HTML and CSS</h3>
-			<p>MaintainableCSS embraces semantic HTML and CSS, so you get all the benefits too.</p>
+			<h3>Семантичный HTML и CSS</h3>
+			<p>Вы извлечете всю пользу семантичного HTML и CSS, так как MaintainableCSS основывается на них.</p>
 		</div>
 		<div class="benefit">
-			<h3>High performance CSS</h3>
-			<p>Flat and performant selectors by convention.</p>
+			<h3>Высокопроизводительный CSS</h3>
+			<p>Производительные селекторы с минимальной вложеностью включены в конвенцию.</p>
 		</div>
 		<div class="benefit">
-			<h3>Find redundant code easily</h3>
-			<p>It's easy to spot redundant code. Find it. Delete it.</p>
+			<h3>Простой поиск в коде</h3>
+			<p>Найти избыточный код становится легче. Найдите его и удалите.</p>
 		</div>
 		<div class="benefit">
-			<h3>AB testing and easy upgrading</h3>
-			<p>Want to test module variants against each other? MaintainableCSS makes this easy.</p>
+			<h3>AB тестирование и простое обновление</h3>
+			<p>Хотите сравнить разные версии модулей? С MaintainableCSS это просто.</p>
 		</div>
-		<a class="benefit-readNowButton" href="/chapters/introduction">Read now</a>
+		<a class="benefit-readNowButton" href="/chapters/introduction">Начать</a>
 	</div>
 </div>
-<div class="recommendations">
-	<h2 class="recommendations-title">What others say</h2>
+<div class="recommendations"><!-- TODO: Translate -->
+	<h2 class="recommendations-title">Комментарии</h2>
 	<div class="recommendations-item">
 		<blockquote>
-			<p>&ldquo;A handy little read on learning how to write modular and maintainable CSS.&rdquo;
+			<p>&ldquo;Удобное маленькое чтиво о том, как писать модульный и поддерживаемый CSS.&rdquo;
 			<br>&mdash; <cite>Smashing Magazine</cite>
 			</p>
 		</blockquote>
 	</div>
 	<div class="recommendations-item">
 		<blockquote>
-			<p>&ldquo;Finally a good book on how to write maintainable CSS.&rdquo;
+			<p>&ldquo;Наконец-то появилась хорошая книжка о том, как писать поддерживаемый CSS код.&rdquo;
 			<br>&mdash; <cite>Alexander Dajani</cite>
 			</p>
 		</blockquote>
 	</div>
 	<div class="recommendations-item">
 		<blockquote>
-			<p>&ldquo;I actually love everything about this.&rdquo;
+			<p>&ldquo;Вообщем, мне понравилось все, что здесь сказано.&rdquo;
 			<br>&mdash; <cite>Simon Taggart</cite>
 			</p>
 		</blockquote>
 	</div>
 	<div class="recommendations-item">
 		<blockquote>
-			<p>&ldquo;Totally agree with this approach to CSS.&rdquo;
+			<p>&ldquo;Абсолютно согласен с этим подходом к написанию CSS.&rdquo;
 			<br>&mdash; <cite>Marcel Reyna</cite>
 			</p>
 		</blockquote>
