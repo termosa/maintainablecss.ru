@@ -1,37 +1,39 @@
 ---
 layout: chapter
-title: Introduction
+title: Введение
 section: Preface
 permalink: /chapters/introduction/
-description: An introduction to MaintainableCSS, an approach to writing modular, scalable and of course maintainable CSS.
+description: Введение в MaintainableCSS, подходу для написания модульного, расширяемого и поддерживаемого CSS кода.
 ---
 
-*MaintainableCSS* is an approach to architecting and writing CSS that helps you and your team write modular, scalable and maintainable code.
+*MaintainableCSS* это подход к проектированию и написанию CSS кода, который поможет вам и вашей команде писать модульный, расширяемый и поддерживаемый код.
 
-In practical terms, this means that as a developer I want to create new features, or edit existing features without having to concern myself with overriding styles I don't want applied, or worse that the code I write causes regression elsewhere.
+По сути, это значит что я, как разработчик, хочу создавать новые фичи, или редактировать существующие, не заморачиваясь со множественным переопределением стилей, и не беспокоится о том, что я могу изменить стили элементов не относящихся к фиче над которой я работаю.
 
-## There is nothing to download
+## Здесь не нужно ничего загружать
 
-*MaintainableCSS* is not something you can download. It's a set of principles, guides and conventions that help you write CSS for large or small scale websites.
+*MaintainableCSS* это не что-то, что вы можете загрузить. Это набор принципов, руководств и конвенций, которые помогают вам писать CSS для проектов любых размеров.
 
-## What does maintainable even mean?
+## Что значит *поддерживаемый*?
 
-Having maintainable code means that I can edit a module and its styles without worrying that I have negatively caused problems in other modules by accident. I want to be able to write code that provides peace of mind knowing that my code is encapsulated.
+Иметь поддерживаемый код &mdash; значит, что я могу изменить модуль и его стили не беспокоясь о том, что это может ненароком вызвать проблемы в других модулях. Я хочу иметь возможность писать код и быть увереным, что он изолирован.
 
-## What does scalable even mean?
+## Что значит *расширяемый*?
 
-This means, that as the CSS codebase increases in size, that maintaining code (see previous point) isn't any harder. If you have ever inherited a large CSS codebase, and been worried about editing existing styles, you can sympathise with this.
+Это значит, что при увеличении CSS кода в проекте, его поддерживаемость (см. предыдущий пункт) не станет ухудшаться. Если вы кода либо получали в наследство большой объем CSS кода, и боялись что либо изменить в нем, то вы легко поймете о чем идет речь.
 
-## What does modular even mean?
+## Что значит *модульный*?
 
-A module is a distinct, independent unit, that can be combined with other modules to form a more complex structure. In a living room, you can consider the TV, the sofa and the wall art to be modules, all coming together to create a useable room.
+Модуль &mdash; это отдельный, независимый блок, который может быть сгруппирован с другими модулями, чтобы создать более сложную структуру. Телевизор, диван и картина в вашей комнате могут называться модулями, и эти модули собранные вместе формируют пригодную для жизни комнтау.
 
-If you take one of the units away, the rest still works just fine. I don't need the TV to be able to sit on the sofa etc. In a website, the header, footer, product list, article etc can all be considered modules.
+Если вы уберете что-нибудь из этого списка, все остальное продолжит работать. Вам не нужен телевизор, чтобы сесть на диван. На странице сайта, его шапка, подвал, список продуктов, публкация и пр. &mdsah; могут быть определены как модули.
 
-## Who is this for?
+## Для кого все это?
 
 If you have ever experienced pain in maintaining CSS, this book can help you avoid common problems. Whether you're in a team of 1 or 100, I think you will find useful advice in this book. Even more so if your site is constantly evolving.
 
-## How hard is this to learn?
+Если вы когда либо испытывали боль при изменении CSS кода &mdash; эта книга может помочь вам избежать некоторых частых проблем. Будь вы в команде из одного или ста человек, я думаю вы все равно найдете для себя полезные советы в этой книге. Тем более, если ваш сайт постоянно "разваливается".
 
-I would say it's very easy to learn. You can read the entire book in under 20 minutes and apply the rules in minutes. Let me know if I am wrong though :).
+## Насколько тяжело это понять?
+
+Я бы сказал, что это очень просто. Вы можете прочитать эту книгу за 20 минут и использовать описаные правила за считанные минуты. Дайте мне знать, если я ошибаюсь :).
