@@ -30,10 +30,9 @@ description: Введение в MaintainableCSS, подходу для напи
 
 ## Для кого все это?
 
-If you have ever experienced pain in maintaining CSS, this book can help you avoid common problems. Whether you're in a team of 1 or 100, I think you will find useful advice in this book. Even more so if your site is constantly evolving.
-
 Если вы когда либо испытывали боль при изменении CSS кода &mdash; эта книга может помочь вам избежать некоторых частых проблем. Будь вы в команде из одного или ста человек, я думаю вы все равно найдете для себя полезные советы в этой книге. Тем более, если ваш сайт постоянно "разваливается".
 
 ## Насколько тяжело это понять?
 
 Я бы сказал, что это очень просто. Вы можете прочитать эту книгу за 20 минут и использовать описаные правила за считанные минуты. Дайте мне знать, если я ошибаюсь :).
+
