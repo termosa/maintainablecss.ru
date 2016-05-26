@@ -1,114 +1,107 @@
 ---
 layout: chapter
-title: Semantics
+title: Семантика
 section: Background
 permalink: /chapters/semantics/
-description: Why naming something based on what it is, instead of how it looks or behaves is a cornerstone of writing well architected and maintainable CSS code.
+description: Называть что-то, основываясь на том что это, вместо того чтобы основыватся на том как это выглядит или как оно себя ведет &mdash; путь к написанию хорошо структурированного и поддерживаемого CSS кода.
 ---
 
-**Summary:** Name something based on what it *is*, not how it *looks* or *behaves*.
+**Кратко:** Называйте все основываясь на том что это, а не на том как это *выглядит* или как оно себя *ведет*.
 
-## The longer explanation
+## Более обширное пояснение
 
-Semantic HTML isn't just about the elements we use&mdash;it's pretty obvious that you should use a `<a>` for a link, a `<table>` for tabular data and a `<p>` for a paragraph etc.
+Семантичный HTML не заканчивается на используемых нами тегах&mdash;это очевидно, что вы должны использовать `<a>` для ссылок, `<table>` для табличных данных и `<p>` для параграфов.
 
-More importantly, it's about the class names (and IDs) we add, that provide *additional* hooks for CSS (and Javascript) to enhance as appropriate.
+Не менее важным является и то, какие имена классов (и идентификаторов) мы используем, для того чтобы найти нужные элементы в CSS коде (или JS).
 
-It's easy to add class names without thought as to their naming but naming is very important.
+Добавлять классы не задумываясь об их именах просто, но именование очень важно.
 
-> &ldquo;There are only two hard things in Computer Science: cache invalidation and naming things.&rdquo;
+> &ldquo;В информатике есть только две сложных вещи: инвалидация кеша и именование.&rdquo;
 <br>&mdash; <cite>Phil Karlton</cite>
 
-This is because humans are good at understanding human communication and bad at understanding abbreviated, non-semantic abstractions.
+Так происходит потому, что люди хорошо понимают человеческий язык и плохо разбираются в сокращениях и не семантичных асбтракциях.
 
-## Good and bad examples of class names
+## Примеры хороших и плохих имен классов
 
-Try and spot the difference between non-semantic and semantic class names...
+Обратите внимание на разницу между не семантичными и семантичными именами классов…
 
-	<!-- bad -->
+	<!-- плохо -->
 	<div class="red pull-left">
 	<div class="grid row">
 	<div class="col-xs-4">
 
-It's not clear at all *what* this HTML represents. You *might* have an *idea* of what these things *look like* (on small or large screens) but that is all.
+В этом примере совершенно не очевидно *что* описано в этой части HTML кода. Вы *можете догадываться* как он *выглядят* (на маленьких или больших экранах), но не более.
 
-	<!-- good -->
+	<!-- хорошо -->
 	<div class="header">
 	<div class="basket">
 	<div class="product">
 	<div class="searchResults">
 
-Here I know exactly what I am looking at. I know the intention of what this HTML represents. And I have no idea how it looks&mdash;that's what CSS is responsible for. Semantic class names mean something to both HTML *and* CSS (and JS).
+В этом примере я точно знаю, на что смотрю. Я вижу какую роль играет этот кусок в HTML документе. И я не имею ни малейшего представления о том, как это выглядит&mdash;об этом позаботится CSS. Семантичные имена классов имеют значение как для HTML так и для CSS и JS.
 
-So **why** else should we use semantic class names?
+Есть ли другие причины использовать семантичные имена классов?
 
-## Because it's easier to understand.
+## Они проще в понимании.
 
-Whether you're looking at the HTML or the CSS, you know what you're affecting. With visual class names you end up having to sprinkle several class names on to each element, ending up with a vague understanding of the intention of these visual class names. This is hard to maintain.
+Когда вы смотрите на HTML или CSS&mdash;вы знаете, с чем вы работаете. С именами классов завязанными на представлении вы разбрасываете их по всему документу для совершенно разных элементов, и в конце концов вы придете к тому, что будет сложно понять какие элементы вы затронете при изменении стилей. Такой код очень сложно поддерживать.
 
-## Because we are building responsive websites.
+## Мы создаем сайты отзывчивые к размерам экрана.
 
-Styles often need changing based on viewport size. For example, you might float elements on big screens and not on small screens. So if you have a class called `clearfix` but you don't clear on small screens, then you now have misleading code.
+Часто стили должны изменяться в зависимости от размера экрана. К примеру, вы хотите использовать `float` на больших экранах. В таком случае вам наверняка пригодится класс `clearfix`, который не нужен на маленьких экранах и будет вводить разработчиков в заблуждение.
 
-If you use semantic class names, then you can style them differently based on media queries making it easier to maintain.
+Если бы вы использовали семантичные имена классов, то вы бы смогли стилизовать их в отдельности для разные размеров экрана (используя @media). Такой код будет легче поддерживать.
 
-## Because semantic class names are easier to find.
+## Семантичные имена классов легче находить.
 
-If an element has classes based on how it looks such as `.red`, `clearfix` and `.pull-left`, then these classes will be scattered all over the codebase&mdash;so if you’re trying to hunt for a particular piece of HTML, the class name is not going to help you.
+Если у элементов будут классы основанные на том, как они представлены на странице, вроде `.red`, `.clearfix`, `.pull-left`, тогда эти классы будут разбросаны по всему вашему коду и если вы захотите найти нужный вам HTML, имя класс вам мало поможет.
 
-On the other hand, if your class names are semantic, a search will find the HTML in question. Or more typically, if you're beginning your search via the HTML (think: inspecting an element) then finding unique CSS selectors based on the class name will be far easier.
+В ином случае, если имена классов семантичны, вы сможете найти нужный HTML в один запрос. Также просто будет найти нужный CSS код: открыть в инспекторе элемент и посмотреть уникальное имя класса.
 
-## Because you don't want unexpected regression.
+## Вы не любите регрессию.
 
-If you have utility non-semantic classes that describe the look then when you edit one of these classes, they will propagate to every single element with that class. Knowing CSS as you do, do you feel comfortable that the propagation didn't cause unexpected problems elsewhere?
+Если у вас есть вспомогательные классы, которые описывают внешний вид, то при их редактировании вы затронете все элементы которые их используют. Зная CSS так, как вы его знаете, не считаете ли вы, что было бы удобнее работать с ним без подобного эффекта?
 
-Semantic class names are unique, so when editing one, you *can* feel comfortable that your change only applies to the module in question as you intended, making maintainance easier.
+Семантичные имена классов уникальны, поэтому, когда вы изменяете стили для одного из них, вы *можете* быть уверены в том, как именно эти изменения повлияют на внешний вид, улучшая поддерживаемость кода.
 
-## Because you don't want to be afraid to update code.
+## Вы не хотите бояться изменять код.
 
-Directly linked with the previous point about regression, when you don't feel comfortable touching code, you end up causing problems or being afraid to touch it at all. Therefore you end up with redundant code, increasing maintainance issues.
+Этот пункт на прямую связан с предыдущим пунктом о регрессии&mdash;когда код сложно изменять, вы можете создаеть целый ряд проблем при его изменении, или же вообще побояться его менять. В итоге вы создаете избыточный код усложняя поддержку проекта.
 
-## Because it helps automated functional testing.
+## Автоматическое функциональное тестирование становится проще.
 
-Automated functional tests work by searching for particular elements, interacting with them (typing in text, clicking buttons and links etc) and verifying based on that.
+При автоматическом функциональном тестировании валидность элементов документа проверяется выполнением определенных действий (ввод текста, нажатие на кнопки и ссылки и т.д.) на элементах, которые выбираются поиском по селекторам.
 
-If you have visual class names all over the HTML, then there is no reliable way to target particular elements and act upon them.
+Если имена классов в HTML документах даны на основании внешнего вида элементов&mdash;поиск нужных элементов по этим именам не может быть надежным.
 
-## Because it provides meaningful hooks for Javascript to enhance.
+## Это дает логичные имена для связки с Javascript.
 
-Just like these hooks help automated testing, they are also useful to enhance behaviour with Javascript. Visual class names can't be used as a reliable way to target modules or components.
+Точно так же, как эти имена упрощают автоматическое тестирование, они упрощают работу с элементами в Javascript. Визуальные имена классов не могут быть надежными селекторами для поиска компонентов.
 
-## Because of general maintainance concerns.
+## Из соображения общих принципов поддержки.
 
-If you name something based on what it is, you won't have to touch the HTML again i.e. a heading is always a heading, no matter what it *looks* like.
+Если вы называете компоненты основываясь на том, чем они являются, вам не придется часто изменять HTML, так как заголовок всегда будет заголовком не зависимо от того как он *выглядит*.
 
-The styling might change but you only have to update the CSS. This is otherwise known as Loose Coupling and this improves maintainability.
+Оформление может изменяться, но это будет влиять только на CSS. Это так же известно как слабая связанность (Loose Coupling) и она улучшает поддерживаемость кода.
 
-## Because utility classes increase noise when debugging.
+## Вспомогательные классы мешают при отладке.
 
-When debugging an element, there will be several applicable CSS selectors making it noisey to debug.
+При отладке, у элемента будет больше CSS селекторов применимых к нему, что усложняет этот процесс.
 
-## Because the standards recommend it.
+## Это рекомендовано по стандартам.
 
-On using the class attribute, HTML5 specs say in 3.2.5.7:
+Об использовании значений для атрибута class сказано в спецификации по HTML5 в пункте 3.2.5.7:
 
-> "[...] authors are encouraged to use values that describe the nature of the content, rather than values that describe the desired presentation of the content."
+> "[…] авторы поощряют использование значений, которые описывают характер содержимого, нежели внешний вид этого содержимого."
 
-## Because you get a performance bump.
+## Вы получите прирост производительности.
 
-This is a *very* small benefit but when you have one class name per element, you end up with smaller HTML. With visual classes you end up with multiple class names per element and that can add up.
+Это *очень* маленькое преимущество, но когда у вас есть всего один класс для каждого элемента&mdash;ваш HTML станет меньше. С классами завязанными на визуальном представлении у элементов будут перечислены множества таких классов, что увеличит размер документа.
 
-## Because it adheres to the reuse rule.
+## Это связано с принципом повторного использования кода.
 
-If you don't use semantic class names, then you will likely be breaking the rules of reuse. Read the next chapter to find out more.
+Если вы не используете семантичные имена классов, то, скорее всего, вы нарушите правила повторного использования кода. В следующей главе это будет описано подробнее.
 
-<!--## Why? Because visual class names might declare the same property!
+## В заключение.
 
-It's likely that several different utility classes could refer to the same property meaning order matters and performance degrades.
-
-Think of an example of this.
--->
-
-## Final thoughts about semantics
-
-Semantic class names are a corner stone of *MaintainableCSS*. Without this, everything else makes little sense. So name something based on what it is and everything else follows.
+Семантичные имена классов являются основным стержнем *MaintainableCSS*. Без этого, все остальное практически не имеет никакого смысла. Так что называйте все, основываясь на том, чем оно является, и тогда у вас получится все остальное.
