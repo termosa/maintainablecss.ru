@@ -1,49 +1,49 @@
 ---
 layout: chapter
-title: Reuse
+title: Повторное использование
 section: Background
 permalink: /chapters/reuse/
-description: Learn why avoding reuse and embracing repetition makes CSS maintenance easier.
+description: Почему отказ от повторного использования и приемлемость повторений делает работу с CSS проще.
 ---
 
-**Summary:** Don't try and reuse styles. Adopt a duplication-first approach.
+**Summary:** Не пытайтесь повторно использовать стили. Воспользуйтесь duplication-first подходом.
 
-> &ldquo;DRY is often misinterpreted as the necessity to never repeat the exact same thing twice [...]. This is impractical and usually counterproductive, and can lead to forced abstractions, over-thought and [over]-engineered code.&ldquo;
+> &ldquo;Принцип DRY часто неверно понимается как отказ от повторения одного и того же дважды [...]. Это непрактично и обычно конрпродуктивно. Это может привести к вынужденным абстракциям, к замудренному и насыщенному конструкциями коду.&ldquo;
 <br>&mdash; <cite>Harry Roberts, CSS Wizardy</cite>
 
-Don't take this the wrong way&mdash;MaintainableCSS has various strategies for reuse which I will talk about later. The problem is that trying to reuse the bits *inbetween* the curly braces is problematic. Here's why:
+Поймите правильно,&mdash;MaintainableCSS включает различные подходы для повторного использования, о которых речь пойдет позже. Проблемой же является повторное использование элементов, заключенных *внутри* фигурных скобок. И вот почему:
 
-## Because styles change based on breakpoints.
+## Поскольку изменение стилей основывается на контрольных точках.
 
-Building responsive sites mean that we style elements differently based on viewport size. Imagine trying to build a 2 column grid that:
+Создание адаптивных сайтов подразумевает задание стилей элемементов в зависимости от размера экрана. Предположим, нам нужно создать такую таблицу из двух колонок, чтобы:
 
-- has 50px and 20px padding on large and small screens respectively.
-- has 3em and 2em font-size on large and small screens respectively.
-- on small screens each column is stacked below each other. Note: "column" is now misleading.
+-  свойство padding составляло 50px и 20px на больших и малых экранах соответственно.
+- размер шрифта составлял 3em и 2em на больших и малых экранах соответственно.
+- на малых экранах колонки располагались одна под другой. Заметим, что понятие колонка здесь становится довольно условным.
 
-With this in mind how can you utilise these atomic class names: `.grid`, `.col`, `.pd50`, `.pd20`, `.fs2` and `fs3` and achieve these specs?
+Отталкиваясь от этого, как бы вы воспользовались следующими элементарными именами классов: `.grid`, `.col`, `.pd50`, `.pd20`, `.fs2` and `fs3`, - чтобы удовлетворить требованиям задания?
 
 	<div class="grid">
 	  <div class="col pd50 pd20 fs3 fs2">Column 1</div>
 	  <div class="col pd50 pd20 fs3 fs2">Column 2</div>
 	</div>
 
-You can see this just isn't going to work. You now need some crazy class names such as `fs3large`. This is just the tip of iceberg when it comes to maintenance issues.
+Как видите, это просто не будет работать. Вам теперь понадобятся такие странные имена классов, как `fs3large`. И это только вершина айсберга, когда дело доходит до проблем реализации.
 
-Alternatively, take the following semantic mark-up that doesn't attempt to reuse styles:
+В качестве альтернативы, рассмотрим следующую семантическую разметку, которая не пытается использовать стили повторно:
 
 	<div class="someModule">
 	  <div class="someModule-someComponent"></div>
 	  <div class="someModule-someOtherComponent"></div>
 	</div>
 
-Ensuring this is styled as specified above, is now a simple task with 6 CSS declarations needed in total, 3 of which reside within media queries.
+Благодаря чему, реализация стилей, описанных ранее, является теперь простой задачей, требующей всего шесть CSS-деклараций, три из которых содержатся в медиа-запросах.
 
-## Because styles change based on states.
+## Поскольку изменение стилей зависит от состояния.
 
-How do you make `<a class="padding-left-20 red" href="#"></a>` to have padding 18px, a slight border, a background of grey and a text colour as a slightly darker shade of red when it's hovered or focused of active i.e. `:hover`,`:focus`, `:active` etc?
+Как бы вы сделали, чтобы класс `<a class="padding-left-20 red" href="#"></a>` имел padding 18px, тонкую границу и текст более темного оттенка на сером фоне, когда его состояние меняется на hovered, focused или active? `:hover`,`:focus`, `:active` и прочее?
 
-The short answer is you can't. Try to avoid having to fix self-induced problems.
+Если коротко, то никак. Не создавайте себе проблемы.
 
 ## Because reuse makes debugging more difficult.
 
