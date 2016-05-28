@@ -45,41 +45,41 @@ description: Почему отказ от повторного использо�
 
 Если коротко, то никак. Не создавайте себе проблемы.
 
-## Because reuse makes debugging more difficult.
+## Поскольку повторное использование усложняет отладку.
 
-When debugging an element, there will be several applicable CSS selectors playing a part making it noisy.
+Несколько CSS селекторов, примененных к элементу, добавляют помех в его отладку.
 
-## Because granular styles aren't worth bothering with.
+## Поскольку не стоит возиться с детализированными стилями.
 
-If you're going to do `<div class="red">` you may as well do `<div style="color: red">` which is more explicit anyway. But we don't want to do this because we don't want to mix concerns.
+Если вы собираетесь использовать `<div class="red">`, можно также сделать `<div style="color: red">`, что уж точно будет более понятным вариантом. Но мы не хотим это делать, чтобы не смешивать понятия.
 
-## Because visual class names don't hold much meaning.
+## Поскольку имена класса, связанные с отображением, порой довольно неопределенны.
 
-Take `red`. Does this mean a red background? Does this mean red text? Does this mean a red gradient? What tint of red does this mean?
+Например, имя `red`. Означает ли оно цвет фона или тескта или градиента? Какой оттенок красного оно обозначает?
 
-## Because updating a "utility" class applies to all instances.
+## Поскольку изменения "служебного" класса влияют на все случаи его применения.
 
-This sounds good but it isn't. You end up applying changes where you didn't mean to. Think regression. Alternatively, you end up scared to touch this utility class so you end up with `.red2`. Then you end up with redundant code. Obviously this is not fun to maintain.
+Звучит заманчиво, но на деле это не так. Вы столкнетесь с тем, что сделанные изменения проявятся не по месту предназначения. Возвращемся к исходному состоянию. Как вариант, вы начнете бояться прикасаться к этому классу общего пользования и создадите `.red2`. Так вы приходите к избыточному коду, поддерживать который, конечно, неприятно.
 
-## Because non-semantic class names are hard to find.
+## Поскольку несемантические имена классов усложняют поиск.
 
-If an element has classes based on how it looks such as `.red`, `.col-lg-4` and `.large`, then these classes will be scattered all over the codebase so searching for "red" will yield many results across the HTML templates, making it hard to find the element in question.
+Если элемент имеет классы, базирующиеся на том, как он выглядит, такие как `.red`, `.col-lg-4` и `.large`, тогда такие классы будут встречаться по всему коду. Результаты поиска для "red" будут многочисленны и разбросаны по шаблонам HTML, что усложняет поиск интересующего элемента.
 
-If you use semantic class names, a search should yield just one result. And if it yields more than one result, then this should indicate a problem that needs dealing with.
+В случае семантических имен класса поиск должен выдать единственный результат. А если результатов больше одного, тогда это сигнализирует о проблеме, требующей внимания.
 
-Note: if you have a repeated *component* within a module, then searching might yield several results within 1 file. That is, a module would typically live in a single template.
+Примечание: если у вас есть повторяющийся *component* внутри модуля, тогда поиск может дать несколько результатов в пределах одного файла. То есть, модуль, как правило, живет в одном шаблоне.
 
-## Because reuse causes bloat.
+## Поскольку повторное использование вызывает увеличение объема кода.
 
-If you attempt to reuse every single *rule* you'll end up with classes such as: `red`, `clearfix`, `pull-left`, `grid` which leads to HTML bloat:
+Попытавшись повторно использовать каждое отдельное *правило*, вы прийдете к таким классами, как `red`, `clearfix`, `pull-left`, `grid`, что приведет к раздуванию HTML-кода:
 
 	<div class="clearfix pull-left red etc">
 
-Bloat makes it harder to maintain and degrades performance (albeit in a minor way).
+Раздутый код труднее поддерживать и у него снижается производительность (хотя и незначительно).
 
-## Because reuse breaks semantics.
+## Поскольку повторное использование нарушает семантику.
 
-If you strive to reuse the bits inbetween the curly braces to create "atomic" class names, then you encounter all the problems stated in the chapter about [Semantics](/chapters/semantics/). Read that chapter now, if you haven't already.
+Если вы стремитесь повторно использовать элементы внутри фигурных скобок, чтобы создать "елементарные" имена классов, то вы столкнетесь со всеми проблемами, изложенными в главе [Semantics](/chapters/semantics/). Прочитайте эту главу сейчас, если еще не успели.
 
 ## What if I really want to reuse a style?
 
