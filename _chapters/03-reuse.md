@@ -1,91 +1,91 @@
 ---
 layout: chapter
-title: Reuse
+title: Повторное использование
 section: Background
 permalink: /chapters/reuse/
-description: Learn why avoding reuse and embracing repetition makes CSS maintenance easier.
+description: Почему отказ от повторного использования и приемлемость повторений делает работу с CSS проще.
 ---
 
-**Summary:** Don't try and reuse styles. Adopt a duplication-first approach.
+**Summary:** Не пытайтесь повторно использовать стили. Воспользуйтесь duplication-first подходом.
 
-> &ldquo;DRY is often misinterpreted as the necessity to never repeat the exact same thing twice [...]. This is impractical and usually counterproductive, and can lead to forced abstractions, over-thought and [over]-engineered code.&ldquo;
+> &ldquo;Принцип DRY часто неверно понимается как отказ от повторения одного и того же дважды [...]. Это непрактично и обычно конрпродуктивно. Это может привести к вынужденным абстракциям, к замудренному и насыщенному конструкциями коду.&ldquo;
 <br>&mdash; <cite>Harry Roberts, CSS Wizardy</cite>
 
-Don't take this the wrong way&mdash;MaintainableCSS has various strategies for reuse which I will talk about later. The problem is that trying to reuse the bits *inbetween* the curly braces is problematic. Here's why:
+Поймите правильно,&mdash;MaintainableCSS включает различные подходы для повторного использования, о которых речь пойдет позже. Проблемой же является повторное использование элементов, заключенных *внутри* фигурных скобок. И вот почему:
 
-## Because styles change based on breakpoints.
+## Поскольку изменение стилей основывается на контрольных точках.
 
-Building responsive sites mean that we style elements differently based on viewport size. Imagine trying to build a 2 column grid that:
+Создание адаптивных сайтов подразумевает задание стилей элемементов в зависимости от размера экрана. Предположим, нам нужно создать такую таблицу из двух колонок, чтобы:
 
-- has 50px and 20px padding on large and small screens respectively.
-- has 3em and 2em font-size on large and small screens respectively.
-- on small screens each column is stacked below each other. Note: "column" is now misleading.
+-  свойство padding составляло 50px и 20px на больших и малых экранах соответственно.
+- размер шрифта составлял 3em и 2em на больших и малых экранах соответственно.
+- на малых экранах колонки располагались одна под другой. Заметим, что понятие колонка здесь становится довольно условным.
 
-With this in mind how can you utilise these atomic class names: `.grid`, `.col`, `.pd50`, `.pd20`, `.fs2` and `fs3` and achieve these specs?
+Отталкиваясь от этого, как бы вы воспользовались следующими элементарными именами классов: `.grid`, `.col`, `.pd50`, `.pd20`, `.fs2` and `fs3`, - чтобы удовлетворить требованиям задания?
 
 	<div class="grid">
 	  <div class="col pd50 pd20 fs3 fs2">Column 1</div>
 	  <div class="col pd50 pd20 fs3 fs2">Column 2</div>
 	</div>
 
-You can see this just isn't going to work. You now need some crazy class names such as `fs3large`. This is just the tip of iceberg when it comes to maintenance issues.
+Как видите, это просто не будет работать. Вам теперь понадобятся такие странные имена классов, как `fs3large`. И это только вершина айсберга, когда дело доходит до проблем реализации.
 
-Alternatively, take the following semantic mark-up that doesn't attempt to reuse styles:
+В качестве альтернативы, рассмотрим следующую семантическую разметку, которая не пытается использовать стили повторно:
 
 	<div class="someModule">
 	  <div class="someModule-someComponent"></div>
 	  <div class="someModule-someOtherComponent"></div>
 	</div>
 
-Ensuring this is styled as specified above, is now a simple task with 6 CSS declarations needed in total, 3 of which reside within media queries.
+Благодаря чему, реализация стилей, описанных ранее, является теперь простой задачей, требующей всего шесть CSS-деклараций, три из которых содержатся в медиа-запросах.
 
-## Because styles change based on states.
+## Поскольку изменение стилей зависит от состояния.
 
-How do you make `<a class="padding-left-20 red" href="#"></a>` to have padding 18px, a slight border, a background of grey and a text colour as a slightly darker shade of red when it's hovered or focused of active i.e. `:hover`,`:focus`, `:active` etc?
+Как бы вы сделали, чтобы класс `<a class="padding-left-20 red" href="#"></a>` имел padding 18px, тонкую границу и текст более темного оттенка на сером фоне, когда его состояние меняется на hovered, focused или active? `:hover`,`:focus`, `:active` и прочее?
 
-The short answer is you can't. Try to avoid having to fix self-induced problems.
+Если коротко, то никак. Не создавайте себе проблемы.
 
-## Because reuse makes debugging more difficult.
+## Поскольку повторное использование усложняет отладку.
 
-When debugging an element, there will be several applicable CSS selectors playing a part making it noisy.
+Несколько CSS селекторов, примененных к элементу, добавляют помех в его отладку.
 
-## Because granular styles aren't worth bothering with.
+## Поскольку не стоит возиться с детализированными стилями.
 
-If you're going to do `<div class="red">` you may as well do `<div style="color: red">` which is more explicit anyway. But we don't want to do this because we don't want to mix concerns.
+Если вы собираетесь использовать `<div class="red">`, можно также сделать `<div style="color: red">`, что уж точно будет более понятным вариантом. Но мы не хотим это делать, чтобы не смешивать понятия.
 
-## Because visual class names don't hold much meaning.
+## Поскольку имена класса, связанные с отображением, порой довольно неопределенны.
 
-Take `red`. Does this mean a red background? Does this mean red text? Does this mean a red gradient? What tint of red does this mean?
+Например, имя `red`. Означает ли оно цвет фона или тескта или градиента? Какой оттенок красного оно обозначает?
 
-## Because updating a "utility" class applies to all instances.
+## Поскольку изменения "служебного" класса влияют на все случаи его применения.
 
-This sounds good but it isn't. You end up applying changes where you didn't mean to. Think regression. Alternatively, you end up scared to touch this utility class so you end up with `.red2`. Then you end up with redundant code. Obviously this is not fun to maintain.
+Звучит заманчиво, но на деле это не так. Вы столкнетесь с тем, что сделанные изменения проявятся не по месту предназначения. Возвращемся к исходному состоянию. Как вариант, вы начнете бояться прикасаться к этому классу общего пользования и создадите `.red2`. Так вы приходите к избыточному коду, поддерживать который, конечно, неприятно.
 
-## Because non-semantic class names are hard to find.
+## Поскольку несемантические имена классов усложняют поиск.
 
-If an element has classes based on how it looks such as `.red`, `.col-lg-4` and `.large`, then these classes will be scattered all over the codebase so searching for "red" will yield many results across the HTML templates, making it hard to find the element in question.
+Если элемент имеет классы, базирующиеся на том, как он выглядит, такие как `.red`, `.col-lg-4` и `.large`, тогда такие классы будут встречаться по всему коду. Результаты поиска для "red" будут многочисленны и разбросаны по шаблонам HTML, что усложняет поиск интересующего элемента.
 
-If you use semantic class names, a search should yield just one result. And if it yields more than one result, then this should indicate a problem that needs dealing with.
+В случае семантических имен класса поиск должен выдать единственный результат. А если результатов больше одного, тогда это сигнализирует о проблеме, требующей внимания.
 
-Note: if you have a repeated *component* within a module, then searching might yield several results within 1 file. That is, a module would typically live in a single template.
+Примечание: если у вас есть повторяющийся *component* внутри модуля, тогда поиск может дать несколько результатов в пределах одного файла. То есть, модуль, как правило, живет в одном шаблоне.
 
-## Because reuse causes bloat.
+## Поскольку повторное использование вызывает увеличение объема кода.
 
-If you attempt to reuse every single *rule* you'll end up with classes such as: `red`, `clearfix`, `pull-left`, `grid` which leads to HTML bloat:
+Попытавшись повторно использовать каждое отдельное *правило*, вы прийдете к таким классами, как `red`, `clearfix`, `pull-left`, `grid`, что приведет к раздуванию HTML-кода:
 
 	<div class="clearfix pull-left red etc">
 
-Bloat makes it harder to maintain and degrades performance (albeit in a minor way).
+Раздутый код труднее поддерживать и у него снижается производительность (хотя и незначительно).
 
-## Because reuse breaks semantics.
+## Поскольку повторное использование нарушает семантику.
 
-If you strive to reuse the bits inbetween the curly braces to create "atomic" class names, then you encounter all the problems stated in the chapter about [Semantics](/chapters/semantics/). Read that chapter now, if you haven't already.
+Если вы стремитесь повторно использовать элементы внутри фигурных скобок, чтобы создать "элементарные" имена классов, то вы столкнетесь со всеми проблемами, изложенными в главе [Semantics](/chapters/semantics/). Прочитайте эту главу сейчас, если еще не успели.
 
-## What if I really want to reuse a style?
+## А если я действительно хочу использовать стиль повторно?
 
-It is extremely rare, but there are times when it really does make sense to reuse a style. In this case use the comma in your selectors and place it in a well named file.
+Очень редко, но случается, что имеет смысл использовать стиль повторно. Тогда используйте запятую в своих селекторах и помещайте их в файл с подходящим именем.
 
-For example let's say you wanted a bunch of different modules or components to have red text you might do this:
+Например, вы хотите, чтобы набор разных модулей или компонентов использовал текст красного цвета. Это можно реализовать следующим образом:
 
 	/* colours.css */
 
@@ -95,9 +95,9 @@ For example let's say you wanted a bunch of different modules or components to h
 		color: red;
 	}
 
-Remember though that if any selector deviates, even a little bit, then remove it from the common list and duplicate. You must be very careful with something like this. Do it for convenience, not for performance. Your mileage may vary.
+Однако помните, что при изменении любого селектора, даже незначительном, его прийдется вынести из общего списка и определить отдельно. Нужно быть осторожным в подобной ситуации. Сделайте это для удобства, а не производительности. Можете не соглашаться.
 
-## What about mixins?
+## А как быть с примесями?
 
 CSS preprocessors allow you to create mixins which can be really helpful because they provide the best of both worlds but they should be designed with caution.
 
