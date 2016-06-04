@@ -1,20 +1,20 @@
 ---
 layout: chapter
-title: IDs
+title: ID
 section: Background
 permalink: /chapters/ids/
-description: Learn why using IDs as hooks for styling are problematic and what you should do instead.
+description: Узнайте почему использование ID в стилях проблематично и что с этим делать.
 ---
 
-**Summary:** *Don't* use IDs as hooks for styling.
+**Кратко:** *Не* используйте ID в своих стилях.
 
-**Why** shouldn't we use IDs for CSS?
+**Почему** не стоит использовать ID в CSS?
 
-## Because of specificity issues.
+## Из-за его специфичности.
 
-[IDs overpower class names](http://www.w3.org/TR/css3-selectors/#specificity) by orders of magnitude. For this reason you can't override an ID selector's style with a class name selector easily.
+[ID значительно приоритетнее CSS-классов](http://www.w3.org/TR/css3-selectors/#specificity). Из-за этого, переопределение стилей установленных ID-селектором будет непростой задачей для классов.
 
-This becomes a problem when you need a way to provide additional meaning to the HTML, such as state, something we discuss in a chapter of its own.
+Это становится проблемой, когда необходимо добавить больше значения к блоку HTML, к примеру, его состояние, или что-то из того что мы обсуждали в этих главах.
 
 	#someModule {
 	    color: red;
@@ -24,7 +24,7 @@ This becomes a problem when you need a way to provide additional meaning to the 
 	    color: blue;
 	}
 
-If you apply the ID and the class name to the element, the colour will always be red.
+Если присовить элементу указанные ID и класс, цвет останется красным.
 
 	.someModule {
 	    color: red;
@@ -34,12 +34,13 @@ If you apply the ID and the class name to the element, the colour will always be
 	    color: blue;
 	}
 
-Now the colour will be blue as intended.
+Теперь цвет будет синим, как мы этого и хотели.
 
-## But, sometimes an ID is required?
+## Но ведь иногда ID необходим?
 
-Sometimes using IDs is necessary. For example a form control is linked to a label by ID. And internal anchors are often bound using IDs too. Both of these improve the User Experience. Use as appropriate for additional behaviour, not for styling.
+Иногда использование ID неизбежно. Как в случае с элементами формы связанными с их описанием (label) через ID. Внутристраничные ссылки также привязаны к элементам через ID. Все это необходимо, чтобы сделать интерфейс более удобным. Используйте ID для этих задач, но не используйте его в CSS.
 
-## Final thoughts on IDs
+## Заключение
 
-Avoid IDs as hooks for styling but if you need them for other things use them. As and when you do use IDs, stick to the naming conventions you would use for classes as explained in other chapters.
+Избегайте использования ID в своих стилях и в то же время используйте их для других задач. Когда вы даете имена своим ID, придерживайтесь тех же соглашений, которые применяете для именования классов.
+
