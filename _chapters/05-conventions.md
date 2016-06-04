@@ -1,29 +1,30 @@
 ---
 layout: chapter
-title: Conventions
+title: Соглашения
 section: Core
 permalink: /chapters/conventions/
-description: Learn the simple conventions that MaintainableCSS employs to write modules, components and state.
+description: Изучите простые соглашения используемые MaintainableCSS для написания модулей, компонентов и состояний.
 ---
 
-Conventions can be a bone of contention amongst engineers, but what matters most is readability and consistency. With that said, *MaintainableCSS* has the following convention:
+Соглашения могут стать яблоком раздора среди инженеров и дать им много повода для споров. Но важно понимать, что самое главное во всем этом&mdash;это читабельность и последовательность. Учитывая это, MaintainableCSS придерживается следующих соглашений:
 
-	/* Square brackets denote optional parts */
+	/* Квадратные скобки обозначают необязательные части */
 	.<moduleName>[-<componentName>][-<state>] {}
 
-Here are some real examples pertaining to a "search results" module:
+Вот несколько реальных примеров относящихся к модулю "результаты поиска":
 
-	/* module container/root */
+	/* модуль/контейнер */
 	.searchResults {}
 
-	/* components of a module */
+	/* компоненты модуля */
 	.searchResults-heading {}
 
 	.searchResults-item {}
 
-	/* state: such as AJAX loading */
+	/* состояние: к примеру, выполнение AJAX запроса */
 	.searchResults-isLoading {}
 
-Each of these class names are semantic. Module, component and state are all delimitted by dashes. Each bit is written in lowerCamelCase.
+Все эти имена классов семантичны. Модуль, компонент и состояние разделены тире ( `-` ). Каждая часть написана в нижнем верблюжьем регистре (lowerCamelCase).
 
-We will see this convention used in all upcoming chapters.
+Это соглашение будет использоваться во всех следующих главах.
+
